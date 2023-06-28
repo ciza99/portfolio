@@ -103,7 +103,7 @@ export const TechStack = () => {
       }
       setIndex((value % technologies.length) + technologies.length);
     },
-    [technologies.length, index, api]
+    [index, api]
   );
 
   useEffect(() => {

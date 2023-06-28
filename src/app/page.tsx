@@ -53,10 +53,10 @@ export default function Home() {
         <div className="flex gap-24 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold">
-              Hi, I'm Michael
+              Hi, I&aposm Michael
             </h1>
             <h2 className="text-xl md:text-3xl font-extrabold mt-4">
-              I'm a{" "}
+              I&aposm a{" "}
               <span className="text-primary">fullstack web developer</span>
             </h2>
             <p className="text-xl max-w-3xl text-grey mt-8 font-medium whitespace-break-spaces">
