@@ -12,7 +12,9 @@ import {
 import { Reveal } from "./reveal";
 import { Section } from "./section";
 import { ReactNode } from "react";
-import { ParticleGrid } from "./particle-grid";
+import dynamic from "next/dynamic";
+
+const ParticleGrid = dynamic(() => import("./particle-grid"), { ssr: false });
 
 const TechnologyListCard = ({
   icon,
@@ -53,10 +55,10 @@ export default function Home() {
         <div className="flex gap-24 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold">
-              Hi, I&aposm Michael
+              {"Hi, I'm Michael"}
             </h1>
             <h2 className="text-xl md:text-3xl font-extrabold mt-4">
-              I&aposm a{" "}
+              {"I'm a "}
               <span className="text-primary">fullstack web developer</span>
             </h2>
             <p className="text-xl max-w-3xl text-grey mt-8 font-medium whitespace-break-spaces">
@@ -155,7 +157,7 @@ export default function Home() {
       <Section id="projects">
         <Reveal>
           <h1 className="text-2xl md:text-3xl font-bold">Featured projects</h1>
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-4 p-4 bg-white/5 rounded-xl mt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-4 p-4 border border-white/5 hover:bg-white/[0.025] transition-colors rounded-xl mt-8">
             <div className="flex grow flex-col gap-4 items-center justify-evenly max-w-2xl mx-auto">
               <h2 className="text-xl font-bold">Overload</h2>
               <p className="text-lg text-grey text-center">
@@ -169,10 +171,20 @@ export default function Home() {
                   Expo | React Native | tRPC | Node.js
                 </p>
                 <div className="flex gap-4">
-                  <a href="https://github.com/ciza99/overload" target="_blank">
+                  <a
+                    className="hover:text-primary hover:scale-105 transition-all"
+                    href="https://github.com/ciza99/overload"
+                    target="_blank"
+                  >
                     <FaGithub size={24} />
                   </a>
-                  <FaLink size={24} />
+                  <a
+                    className="hover:text-primary hover:scale-105 transition-all"
+                    href="https://github.com/ciza99/overload"
+                    target="_blank"
+                  >
+                    <FaLink size={24} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -202,7 +214,7 @@ export default function Home() {
               <div>
                 <p className="text-lg font-bold">Email</p>
                 <a
-                  className="font-bold text-primary"
+                  className="hover:underline font-bold text-primary"
                   href="mailto:cizekmichal99@gmail.com"
                 >
                   cizekmichal99@gmail.com

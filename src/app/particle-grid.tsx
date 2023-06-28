@@ -25,8 +25,9 @@ const calculatePositions = (): number[][] => {
 };
 const pointPositions = calculatePositions();
 
-export const ParticleGrid = () => {
+const ParticleGrid = () => {
   const dotTexture = useLoader(TextureLoader, "/dot.png");
+
   const { t } = useSpring({
     from: { t: 0 },
     to: { t: 2 * Math.PI },
@@ -64,3 +65,5 @@ export const ParticleGrid = () => {
     </Canvas>
   );
 };
+
+export default ParticleGrid;

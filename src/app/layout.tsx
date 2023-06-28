@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import Link from "next/link";
 import { SectionLink } from "./section-link";
+import { AnimatedCursor } from "./animated-cursor";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -21,12 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth flex flex-col grow">
-      <body className={clsx(inter.className, "flex flex-col grow bg-base")}>
+      <body
+        className={clsx(
+          inter.className,
+          "relative flow-hidden flex flex-col grow bg-base"
+        )}
+      >
+        <AnimatedCursor />
         <div className="min-h-screen flex flex-col grow">
           <header className="fixed top-0 left-0 w-full z-20 backdrop-blur bg-base/10 px-8 py-4 flex items-center justify-between">
             <p className="text-primary font-bold">ciza99.dev</p>
-            <nav>
-              <ul className="flex gap-4">
+            <nav className="hidden md:block">
+              <ul className="flex  flex-row gap-4">
                 <li>
                   <SectionLink id="about">About</SectionLink>
                 </li>
