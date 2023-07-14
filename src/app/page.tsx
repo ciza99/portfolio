@@ -156,6 +156,10 @@ export default function Home() {
                 icon: <FaGithub size={24} />,
                 href: "https://github.com/ciza99/wasm-ludo",
               },
+              {
+                icon: <FaExternalLinkAlt size={24} />,
+                href: "http://3.121.215.195/",
+              },
             ]}
           />
         </Reveal>
